@@ -22,7 +22,7 @@ public class DictEx extends DictBody {
 	
 	//fills the English examples array
 	public void fillEngArr() {
-		String exEng = "div.FyTYrC-y > div > span:nth-of-type(1)";
+		String exEng = "div > .FyTYrC-y > div > span:nth-of-type(1)";
 		//iterates through every element for the parameter "exEng" and stores them in an array
 		for(Element e: super.selector(exEng)) {
 			String temp = e.text();
@@ -33,7 +33,7 @@ public class DictEx extends DictBody {
 	
 	//fills the Spanish examples array
 	public void fillEspArr() {
-		String exEsp = "div.FyTYrC-y > div > em:nth-of-type(1)";
+		String exEsp = "div:nth-of-type(1) > div > .FyTYrC-y > div > ._3Qchy0y7";
 		//iterates through every element for the parameter "exEsp" and stores them in an array
 		for(Element ex : super.selector(exEsp)) {
 			String temp = ex.ownText();
@@ -52,7 +52,9 @@ public class DictEx extends DictBody {
 			//exits the loops if there are no more words to display
 			if(wordArr[x]==null) {
 				break;
-			} else {
+			}
+			else {
+				/* gender array currently returns null due to html code change at the site
 				//if the word has gender (so it is a Spanish word) it displays its gender
 				if(genderArr[x]!=null) {
 					System.out.print(y + ". " + wordArr[x] + " " + genderArr[x]);
@@ -65,12 +67,11 @@ public class DictEx extends DictBody {
 					System.out.println();
 					System.out.println(engArr[x] + " - " + espArr[x]);
 					System.out.println();
-				}
+				}*/
+				// examples from both langueages does not work due to html change at the site
+				System.out.print(y + ". " + wordArr[x]);
+				System.out.println();
 			}
 		}
-	}
-	
-	
-	
-	
+	}	
 }
