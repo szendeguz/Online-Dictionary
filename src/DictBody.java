@@ -5,8 +5,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-//DictBody implements Gender to show the gender of Spanish words
-public class DictBody implements Gender {
+
+public class DictBody {
 	
 	//declaring variables
 	//url will be the url of the dictionary
@@ -23,7 +23,6 @@ public class DictBody implements Gender {
 		this.url="https://www.spanishdict.com/translate/"+word;
 		//Jsoup connects and gets the HTML document with the given url
 		page = Jsoup.connect(url).get();
-		
 		//calling the array filling methods
 		fillWordArr();
 		fillGenderArr();	
@@ -37,7 +36,7 @@ public class DictBody implements Gender {
 	
 	//fills the word array
 	public void fillWordArr() {
-		String word = "a.C2TP2MvR";
+		String word = "a._1UD6CASd";
 		//iterates through every element for the parameter "word" and stores them in an array
 		for(Element w: this.selector(word)) {
 			String temp = w.text();
@@ -47,7 +46,6 @@ public class DictBody implements Gender {
 	}
 	
 	//fills the gender array
-	@Override
 	public void fillGenderArr() {
 		String gender="a._37-8_B5E";
 		//iterates through every element for the parameter "gender" and stores them in an array
